@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ad.size" content="width=300,height=250" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=BenchNine" rel="stylesheet">
+    <style type="text/css">
+        body {
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
+        }
+
+        #ad-1{
+            position: absolute; 
+            top: 0; 
+            left: 0;
+            overflow: hidden;
+            opacity: 1;
+            width: 300px;
+            height: 250px;
+            text-align: center;
+            z-index:-97;
+        }
+
+        #ad-2{
+            position: absolute; 
+            background-image:    url(BG-IMG@2x.png);
+            background-size:     cover;
+            background-repeat:   no-repeat;
+            background-position: center center;
+            text-align: center;
+            top: 0; 
+            left: 0;
+            width: 300px;
+            height: 250px;
+            overflow: hidden;
+            z-index: -98;
+            opacity: 1;
+        }
+
+        a{
+            opacity: 0;
+        }
+
+        video{
+            z-index: -98;
+            opacity: 1;
+            width: 100%;
+            height: 100%;
+            transform: scale(1.5);
+            overflow: hidden;
+            animation-name: fadeOut;
+	        animation-iteration-count: 1;
+	        animation-timing-function: ease-out;
+	        animation-duration: 1.5s;
+            animation-delay: 6s;
+        }
+
+        video:hover a{
+            opacity: 1
+        }
+
+        #alta-logo{
+            height: 90px;
+            width: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: 20px auto;
+	        animation-name: fadeInOpacity;
+	        animation-iteration-count: 1;
+	        animation-timing-function: ease-in;
+	        animation-duration: 1.5s;
+        }
+
+        #alta-logo2{
+            height: 140px;
+            width: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: 20px auto;
+	        animation-name: fadeInOpacity;
+	        animation-iteration-count: 1;
+	        animation-timing-function: ease-in;
+	        animation-duration: 1.5s;
+            display: none;
+        }
+
+        #ad-1 p{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            margin: 100px auto;
+            font-family: 'BenchNine', sans-serif;
+            font-size: 22px;
+            color: #FAFAFA;
+            animation-name: fadeInOpacity;
+	        animation-iteration-count: 1;
+	        animation-timing-function: ease-in;
+	        animation-duration: 2.5s;
+        }
+
+        #button-container{
+            position: relative;
+            left: 0;
+            right: 0;
+            top: 225px;
+            width: 300px;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 750ms;
+        }
+
+        #ad-1:hover+#button-container{
+            opacity: 1;
+            transition: opacity 500ms;
+        }
+
+        #button-container:hover{
+            opacity: 1;
+        }
+
+        #button-container>#button{
+            opacity: 1;
+            position: relative;
+            bottom: 45px;
+            left: 60px;
+        }
+
+        #button-container>#imgbutton{
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 50px;
+            bottom: -1px;
+            margin: -34px 56px;
+            opacity: 1;
+        }
+
+        #button-container2{
+            position: relative;
+            left: 0;
+            right: 0;
+            top: 200px;
+            z-index: 1;
+            animation-name: fadeInOpacity;
+	        animation-iteration-count: 1;
+	        animation-timing-function: ease-in;
+	        animation-duration: 1.5s;
+            display: none;
+        }
+
+        #button2, #imgbutton2{
+            opacity: 1;
+            position: relative;
+            bottom: 22px;
+            left: 30px;
+            animation-name: fadeInOpacity;
+	        animation-iteration-count: 1;
+	        animation-timing-function: ease-in;
+	        animation-duration: 1.5s;
+            display: none;
+        }
+
+        #second-text{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            margin: 140px auto;
+            font-family: 'BenchNine', sans-serif;
+            font-size: 28px;
+            color: #FAFAFA;
+            animation-name: fadeInOpacity;
+	        animation-iteration-count: 1;
+	        animation-timing-function: ease-in;
+	        animation-duration: 1.5s;
+            display: none;
+        }
+
+        @keyframes fadeInOpacity {
+	        0% {
+		        opacity: 0;
+	        }
+	        100% {
+		        opacity: 1;
+	        }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity:1;
+            }
+             to {
+                opacity:0;
+            }
+        }
+        
+    </style>    
+</head>
+
+<body>
+    <div id="ad-container">
+        <div id="ad-1">
+            <video src="https://s3.amazonaws.com/alta-ads/bkg-video-fullscreen.mp4" height="100%" width="auto" id="bkg-video" autoplay muted>
+            </video>
+            <img alt="alta-ski-resort-logo" id="alta-logo" src="./LOGO.svg"/>
+            <p id="first-text">Steeped In Tradition</p>
+        </div>
+            <div id="button-container">
+                <a id="button" href="https://www.alta.com/alta-100-percent-skiing#culture-of-alta">
+                    <img src="./BUTTON.png" id="imgbutton" alt="Watch Trailer"/>
+                </a>
+            </div>
+        <div id="ad-2">
+            <img alt="alta-ski-resort-logo" id="alta-logo2" src="./LOGO.svg"/>
+            <p id="second-text">Steeped In Tradition</p>
+            <div id="button-container2">
+                <img src="./RIBBON.png" alt=""/>
+                <a id="button2" href="https://www.alta.com/alta-100-percent-skiing#culture-of-alta">
+                    <img src="./BUTTON.png" id="imgbutton2" alt="Watch Trailer"/>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+    document.getElementById('bkg-video').addEventListener('ended',myHandler,false);
+        function myHandler(e) {
+            document.getElementById('ad-1').style.animationName = "fadeOut";
+            document.getElementById('ad-1').style.animationIterationCount = 1;
+            document.getElementById('ad-1').style.animationTimingFunction = "ease-out";
+            document.getElementById('ad-1').style.animationDuration = "0.1s";
+            document.getElementById('ad-1').style.zIndex = -99;
+            document.getElementById('alta-logo',).style.animationName = "fadeOut";
+            document.getElementById('alta-logo').style.animationIterationCount = 1;
+            document.getElementById('alta-logo').style.animationTimingFunction = "ease-out";
+            document.getElementById('alta-logo').style.animationDuration = "0.1s";
+            document.getElementById('first-text').style.animationName = "fadeOut";
+            document.getElementById('first-text').style.animationIterationCount = 1;
+            document.getElementById('first-text').style.animationTimingFunction = "ease-out";
+            document.getElementById('first-text').style.animationDuration = "0.1s";
+            document.getElementById('alta-logo2').style.animationName = "fadeInOpacity";
+            document.getElementById('alta-logo2').style.animationIterationCount = 1;
+            document.getElementById('alta-logo2').style.animationTimingFunction = "ease-in";
+            document.getElementById('alta-logo2').style.animationDuration = "1s";
+        }
+
+    setTimeout( function(){
+        document.getElementById('alta-logo',).style.animationName = "fadeOut";
+        document.getElementById('alta-logo').style.animationIterationCount = 1;
+        document.getElementById('alta-logo').style.animationTimingFunction = "ease-out";
+        document.getElementById('alta-logo').style.animationDuration = "2s";
+        document.getElementById('first-text').style.animationName = "fadeOut";
+        document.getElementById('first-text').style.animationIterationCount = 1;
+        document.getElementById('first-text').style.animationTimingFunction = "ease-out";
+        document.getElementById('first-text').style.animationDuration = "2s";
+    }, 5000)
+
+    setTimeout( function (){
+        document.getElementById('alta-logo2').style.display = "block";
+        document.getElementById('second-text').style.display = "block";
+        document.getElementById('button-container2').style.display = "block";
+        document.getElementById('button2').style.display = "block";
+        document.getElementById('imgbutton2').style.display = "block";
+    }, 7500)
+
+    setTimeout( function (){
+        document.getElementById('alta-logo').style.display = "none";
+        document.getElementById('first-text').style.display = "none";
+    }, 6500)
+
+    </script>
+
+</body>
+</html>

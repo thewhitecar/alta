@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="ad.size" content="width=728,height=90" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=BenchNine" rel="stylesheet">
+    <style type="text/css">
+        body {
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+            box-sizing: border-box;
+        }
+
+        #ad-container{
+            width: 728px;
+            height: 90px;
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+            background: linear-gradient( to right, rgba(147, 146, 146, 0.29), rgba(157, 157, 157, 0.235), rgb(128, 128, 128), rgba(179, 179, 179, 0.961), rgba(126, 126, 126, 0), rgba(222, 222, 222, 0))
+        }
+
+        video{
+            z-index: -1;
+            opacity: 1;
+            width: 100%;
+            height: 100%;
+            -ms-perspective-origin-y: 10%;
+            transform: scale(2.1);
+            position: relative;
+            right: 200px;
+            box-shadow: 10px 10px 10px 10px grey;
+        }
+
+        #logo{
+            position: absolute;
+            z-index: 5;
+            height: 95px;
+            left: 320px;
+            width: auto;
+            top: 6px;
+            animation-name: fadeInOpacity;
+	        animation-iteration-count: 1;
+	        animation-timing-function: ease-in;
+	        animation-duration: 2.5s;
+        }
+
+        #bg{
+            position: absolute;
+            height: 90px;
+            left: 460px;
+            background-image: url(bg-img.png);
+            z-index: 5;
+            height: 90px;
+            width: 250px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+
+        #ribbon{
+            position: relative;
+            right: 18px;
+            height: 90px;
+            z-index: 10;
+        }
+
+        #p-non-hover{
+            position: relative;
+            bottom: 13px;
+            right: 15px;
+            font-family: 'BenchNine', sans-serif;
+            font-size: 32px;
+            color: #FAFAFA;
+            transition: bottom ease-in-out 0.5s;
+            animation-name: fadeInOpacity;
+	        animation-iteration-count: 1;
+	        animation-timing-function: ease-in-out;
+	        animation-duration: 2s;
+        }
+
+        a{
+            position: relative;
+            bottom: 75px;
+            right: 12px;
+            opacity: 0;
+            transition: opacity 700ms;
+        }
+
+        #ad-container:hover a{
+            opacity: 1;
+        }
+
+        #ad-container:hover #p-non-hover{
+            bottom: 35px
+        }
+
+                @keyframes fadeInOpacity {
+	        0% {
+		        opacity: 0;
+	        }
+	        100% {
+		        opacity: 1;
+	        }
+        } 
+    </style>    
+</head>
+<body>
+    <div id="ad-container">
+        <video src="https://s3.amazonaws.com/alta-ads/bkg-video-fullscreen.mp4" width="364px" id="bkg-video" autoplay muted loop></video>
+        <img src="./logo.svg" id="logo"/>
+        <div id="bg">
+            <p id="p-non-hover">Steeped In Tradition</p>
+            <a id="button" href="https://www.alta.com/alta-100-percent-skiing#culture-of-alta"><img src="./BUTTON.png" id="button"/></a>
+        </div>
+        <img id="ribbon" src="./ribbon.png"/>
+    </div>
+    </div>
+</body>
+</html>
