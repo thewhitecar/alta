@@ -19,7 +19,7 @@
             width: 300px;
             height: 600px;
             text-align: center;
-            z-index:-97;
+            z-index:-95;
         }
 
         #ad-2{
@@ -36,10 +36,6 @@
             overflow: hidden;
             z-index: -98;
             opacity: 1;
-        }
-
-        a{
-            opacity: 0;
         }
 
         video{
@@ -76,52 +72,36 @@
             margin: 40px auto;
         }
 
-        #ad-1>p, #ad-2>p{
+        #ad-1>#first-text, #ad-2>#first-text{
             position: absolute;
             left: 0;
             right: 0;
             top: 0;
+            width: 140px;
             margin: 200px auto;
-            font-family: 'BenchNine', sans-serif;
-            font-size: 22px;
-            color: #FAFAFA;
             animation-name: fadeInOpacity;
 	        animation-iteration-count: 1;
 	        animation-timing-function: ease-in;
 	        animation-duration: 2.5s;
         }
 
+        #imgbutton{
+            width: 180px;
+        }
+
         #button-container{
             position: absolute;
-            left: 8px;
-            right: 1px;
-            width: 300;
-            bottom: 175px;
-            margin: 30px auto;
-            z-index: 1;
+            top: 507px;
+            left: 63px;
+            z-index: 20;
             opacity: 0;
             transition: opacity 750ms;
         }
 
-        #ad-1:hover+#button-container{
-            opacity: 1;
-            transition: opacity 500ms;
-        }
-
-        #button-container:hover{
+        #ad-1:hover>#button-container{
             opacity: 1;
         }
 
-        #button-container>#button{
-            display: block;
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: -1px;
-            margin: -34px 55px;
-            opacity: 1;
-            width: 300px;
-        }
 
         #button-container2{
             position: absolute;
@@ -143,19 +123,27 @@
             right: -63px;
         }
 
+        #second-text{
+            display: block;
+            width: 140px;
+            position: relative;
+            top: 50px;
+        }
+
         #imgbutton2{
             display: none;
+            width: 180px;
         }
 
         iframe{
-            /* margin-top: 300px; */
-            margin: 250px auto 0px auto;
-            display: none;
-            animation-name: fadeInOpacity;
-	        animation-iteration-count: 1;
-	        animation-timing-function: ease-in;
-	        animation-duration: 2.0s;
-        }
+            position: relative;
+            top: 250px;
+    display: none;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 2.0s;
+}
 
         #alta-logo2{
             position: absolute;
@@ -174,7 +162,6 @@
             position: absolute;
             left: 0;
             right: 0;
-            top: 0;
             margin: 140px auto;
             font-family: 'BenchNine', sans-serif;
             font-size: 28px;
@@ -188,8 +175,8 @@
 
         #ribbon{
             position: relative;
-            top: 65px;
             display: none;
+            top: 60px;
         }
 
         @keyframes fadeInOpacity {
@@ -211,7 +198,9 @@
         }
         
     </style>    
-    <script src="https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.19.1_92cf05aba6ca4ea5cbc62b5a7cb924e3_min.js"></script>
+        <script type="text/javascript">
+            var clickTag = "https://www.alta.com/alta-100-percent-skiing#culture-of-alta";
+        </script> 
 </head>
 
 <body>
@@ -220,23 +209,25 @@
             <video src="https://s3.amazonaws.com/alta-ads/bkg-video.mp4" height="100%" width="auto" id="bkg-video" autoplay muted>
             </video>
             <img alt="alta-ski-resort-logo" id="alta-logo" src="./LOGO.svg"/>
-            <p id="first-text">Steeped In Tradition</p>
-        </div>
+            <img id="first-text" alt="steeped in tradition" src="./text.png"></img>
             <div id="button-container">
-                <a id="button" href="https://www.alta.com/alta-100-percent-skiing#culture-of-alta">
-                    <img src="./BUTTON.png" id="imgbutton" alt="Watch Trailer"/>
+                <a id="button" href="javascript:window.open(window.clickTag)">
+                    <img src="./button.png" id="imgbutton" alt="Watch Trailer"/>
                 </a>
             </div>
+        </div>
+
+
         <div id="ad-2">
             <img alt="alta-ski-resort-logo" id="alta-logo2" src="./LOGO.svg"/>
-            <p id="second-text">Steeped In Tradition</p>
+            <img id="second-text" alt="steeped in tradition" src="./text.png"></img>
             <iframe width="100%" height="auto" frameborder="0" allowfullscreen id="iframe"
                 src="https://www.youtube.com/embed/4aL9kCqhJ68?controls=0&autoplay=0">
             </iframe>
             <div id="button-container2">
-                <img id="ribbon" src="./RIBBON.png" alt=""/>
-                <a id="button2" href="https://www.alta.com/alta-100-percent-skiing#culture-of-alta">
-                    <img src="./BUTTON.png" id="imgbutton2" alt="Watch Trailer"/>
+                <img id="ribbon" src="./ribbon.svg" alt=""/>
+                <a id="button2" href="javascript:window.open(window.clickTag)">
+                    <img src="./button.png" id="imgbutton2" alt="Watch Trailer"/>
                 </a>
             </div>
         </div>
@@ -268,12 +259,14 @@
         document.getElementById('alta-logo').style.display= "none"
         document.getElementById('first-text').style.display = "none";
         document.getElementById('alta-logo2').style.display = "block";
-        document.getElementById('second-text').style.display = "block";
         document.getElementById('iframe').style.display = "block"
         document.getElementById('ribbon').style.display = "block";
         document.getElementById('imgbutton2').style.display = "block";
         document.getElementById('button-container2').style.display = "block";
-        
+    }, 6500)
+
+    setTimeout(function(){
+        document.getElementById('second-text').style.display = "block";
     }, 6500)
 
     </script>
